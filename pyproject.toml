@@ -1,42 +1,34 @@
-[tool.poetry]
+[project]
+description = "A pure python, declarative binary protocol parser & generator using dataclasses and type hinting."
 name = "bytechomp"
 version = "0.4.0"
-description = "A pure python, declarative binary protocol parser & generator using dataclasses and type hinting."
-authors = ["Andrew Spittlemeister <andrew.spittlemeister@pm.me>"]
+# authors = ["Andrew Spittlemeister <andrew.spittlemeister@pm.me>"]
+homepage = "https://github.com/AndrewSpittlemeister/bytechomp"
+include = [
+  "LICENSE",
+]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/AndrewSpittlemeister/bytechomp"
-homepage = "https://github.com/AndrewSpittlemeister/bytechomp"
-include = [
-    "LICENSE",
-]
-
-[tool.poetry.dependencies]
-python = ">=3.10"
-
-[tool.poetry.group.dev.dependencies]
-black = "*"
-mypy = "*"
-bandit = "*"
-safety = "*"
-pytest = "*"
-pylint = "*"
-twine = "*"
+requires-python = ">=3.10"
 
 [tool.black]
-line-length = 100
-verbose = true
 check = true
 diff = true
+line-length = 100
+verbose = true
+
+[tool.ruff]
+line-length = 100
 
 [tool.pylint.format]
-max-line-length=100
+max-line-length = 100
 
 [tool.pylint."messages control"]
 disable = [
-    "duplicate-code"
+  "duplicate-code",
 ]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+build-backend = "hatchling.build"
+requires = ["hatchling"]
